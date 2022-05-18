@@ -32,7 +32,6 @@ namespace PSS.ucPanel
                 {
                     printrecord.Print_num,
                     printrecord.Emp_name,
-                    printrecord.Emp_name,
                     printrecord.Doc_name,
                     printrecord.Doc_page,
                     printrecord.File_size,

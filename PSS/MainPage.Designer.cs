@@ -39,8 +39,8 @@ namespace PSS
             this.treeView = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.mainPanel = new System.Windows.Forms.Panel();
-            this.workPanel = new System.Windows.Forms.Panel();
+            this.mainPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.workPanel1 = new PSS.ucPanel.WorkPanel();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -88,12 +88,13 @@ namespace PSS
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.treePanel);
+            this.splitContainer1.Panel1MinSize = 150;
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Size = new System.Drawing.Size(1006, 693);
-            this.splitContainer1.SplitterDistance = 178;
+            this.splitContainer1.SplitterDistance = 200;
             this.splitContainer1.TabIndex = 1;
             // 
             // treePanel
@@ -102,7 +103,7 @@ namespace PSS
             this.treePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treePanel.Location = new System.Drawing.Point(0, 0);
             this.treePanel.Name = "treePanel";
-            this.treePanel.Size = new System.Drawing.Size(176, 691);
+            this.treePanel.Size = new System.Drawing.Size(198, 691);
             this.treePanel.TabIndex = 0;
             // 
             // treeView
@@ -114,7 +115,7 @@ namespace PSS
             this.treeView.Location = new System.Drawing.Point(0, 0);
             this.treeView.Name = "treeView";
             this.treeView.SelectedImageIndex = 0;
-            this.treeView.Size = new System.Drawing.Size(176, 691);
+            this.treeView.Size = new System.Drawing.Size(198, 691);
             this.treeView.TabIndex = 0;
             this.treeView.DoubleClick += new System.EventHandler(this.treeView_DoubleClick);
             // 
@@ -141,9 +142,9 @@ namespace PSS
             // 
             // splitContainer2.Panel2
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.workPanel);
-            this.splitContainer2.Size = new System.Drawing.Size(824, 693);
-            this.splitContainer2.SplitterDistance = 623;
+            this.splitContainer2.Panel2.Controls.Add(this.workPanel1);
+            this.splitContainer2.Size = new System.Drawing.Size(802, 693);
+            this.splitContainer2.SplitterDistance = 606;
             this.splitContainer2.TabIndex = 0;
             // 
             // mainPanel
@@ -151,16 +152,16 @@ namespace PSS
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(0, 0);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(621, 691);
+            this.mainPanel.Size = new System.Drawing.Size(604, 691);
             this.mainPanel.TabIndex = 0;
             // 
-            // workPanel
+            // workPanel1
             // 
-            this.workPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.workPanel.Location = new System.Drawing.Point(0, 0);
-            this.workPanel.Name = "workPanel";
-            this.workPanel.Size = new System.Drawing.Size(195, 691);
-            this.workPanel.TabIndex = 0;
+            this.workPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.workPanel1.Location = new System.Drawing.Point(0, 0);
+            this.workPanel1.Name = "workPanel1";
+            this.workPanel1.Size = new System.Drawing.Size(190, 691);
+            this.workPanel1.TabIndex = 0;
             // 
             // MainPage
             // 
@@ -199,9 +200,9 @@ namespace PSS
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.Panel treePanel;
-        private System.Windows.Forms.Panel mainPanel;
-        private System.Windows.Forms.Panel workPanel;
         private System.Windows.Forms.TreeView treeView;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.FlowLayoutPanel mainPanel;
+        private ucPanel.WorkPanel workPanel1;
     }
 }

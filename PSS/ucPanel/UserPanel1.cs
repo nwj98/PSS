@@ -15,6 +15,7 @@ namespace PSS.ucPanel
     public partial class UserPanel1 : UserControl
     {
         UserProperty property = new UserProperty();
+        PropertyPage.UserPropertyPage propertyPage;
         public UserPanel1()
         {
             InitializeComponent();
@@ -54,13 +55,22 @@ namespace PSS.ucPanel
         private void grid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             panel2.Controls.Clear();
-            property.SetLabelText(this.grid.CurrentRow.Cells[0].Value.ToString(),
+            /*property.SetLabelText(this.grid.CurrentRow.Cells[0].Value.ToString(),
                 this.grid.CurrentRow.Cells[1].Value.ToString(),
                 this.grid.CurrentRow.Cells[2].Value.ToString(),
                 this.grid.CurrentRow.Cells[3].Value.ToString(),
                 this.grid.CurrentRow.Cells[4].Value.ToString(),
                 this.grid.CurrentRow.Cells[5].Value.ToString());
             panel2.Controls.Add(property);
+            */
+            propertyPage = new PropertyPage.UserPropertyPage();
+            propertyPage.SetPropertyLabel(this.grid.CurrentRow.Cells[0].Value.ToString(),
+                this.grid.CurrentRow.Cells[1].Value.ToString(),
+                this.grid.CurrentRow.Cells[2].Value.ToString(),
+                this.grid.CurrentRow.Cells[3].Value.ToString(),
+                this.grid.CurrentRow.Cells[4].Value.ToString(),
+                this.grid.CurrentRow.Cells[5].Value.ToString());
+            propertyPage.Show();
         }
     }
 }
