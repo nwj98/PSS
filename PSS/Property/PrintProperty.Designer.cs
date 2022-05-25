@@ -30,9 +30,10 @@ namespace PSS.Property
         private void InitializeComponent()
         {
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblpage = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.lblcolor = new System.Windows.Forms.Label();
             this.lblsize = new System.Windows.Forms.Label();
             this.lblfile = new System.Windows.Forms.Label();
@@ -45,8 +46,6 @@ namespace PSS.Property
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblpage = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -60,16 +59,6 @@ namespace PSS.Property
             this.button2.TabIndex = 5;
             this.button2.Text = "닫기";
             this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(427, 425);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 38);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "파일열기";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
@@ -101,6 +90,24 @@ namespace PSS.Property
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(581, 345);
             this.panel2.TabIndex = 1;
+            // 
+            // lblpage
+            // 
+            this.lblpage.AutoSize = true;
+            this.lblpage.Location = new System.Drawing.Point(142, 223);
+            this.lblpage.Name = "lblpage";
+            this.lblpage.Size = new System.Drawing.Size(50, 20);
+            this.lblpage.TabIndex = 13;
+            this.lblpage.Text = "label9";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(364, 163);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(77, 20);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "컬러여부 :";
             // 
             // lblcolor
             // 
@@ -210,31 +217,12 @@ namespace PSS.Property
             this.label1.TabIndex = 0;
             this.label1.Text = "인쇄번호 :";
             // 
-            // lblpage
-            // 
-            this.lblpage.AutoSize = true;
-            this.lblpage.Location = new System.Drawing.Point(142, 223);
-            this.lblpage.Name = "lblpage";
-            this.lblpage.Size = new System.Drawing.Size(50, 20);
-            this.lblpage.TabIndex = 13;
-            this.lblpage.Text = "label9";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(364, 163);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(77, 20);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "컬러여부 :";
-            // 
             // PrintProperty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Name = "PrintProperty";
             this.Size = new System.Drawing.Size(666, 520);
@@ -248,7 +236,6 @@ namespace PSS.Property
         #endregion
 
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblcolor;

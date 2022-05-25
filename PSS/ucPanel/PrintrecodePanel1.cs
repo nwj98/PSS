@@ -36,9 +36,10 @@ namespace PSS.ucPanel
                     printrecord.Doc_page,
                     printrecord.File_size,
                     printrecord.Page_size,
-                    printrecord.Color
+                    printrecord.Color,
+                    printrecord.Log
 
-                });
+                }) ;
             }
         }
 
@@ -49,15 +50,18 @@ namespace PSS.ucPanel
 
         private void grid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            flowLayoutPanel1.Controls.Clear();
+            tableLayoutPanel1.Controls.Clear();
             property.SetLabelText(this.grid.CurrentRow.Cells[0].Value.ToString(),
                 this.grid.CurrentRow.Cells[1].Value.ToString(),
                 this.grid.CurrentRow.Cells[2].Value.ToString(),
                 this.grid.CurrentRow.Cells[3].Value.ToString(),
                 this.grid.CurrentRow.Cells[4].Value.ToString(),
                 this.grid.CurrentRow.Cells[5].Value.ToString(),
-                this.grid.CurrentRow.Cells[6].Value.ToString());
-            flowLayoutPanel1.Controls.Add(property);
+                this.grid.CurrentRow.Cells[6].Value.ToString()
+                );
+            tableLayoutPanel1.Controls.Add(property);
+            property.Dock = tableLayoutPanel1.Dock;
+            
         }
     }
 

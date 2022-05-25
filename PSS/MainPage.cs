@@ -28,6 +28,7 @@ namespace PSS
         private void MainPage_Load(object sender, EventArgs e)
         {
             mainPanel.Controls.Add(psspanel);
+            psspanel.Dock = mainPanel.Dock;
             TreeNode root = new TreeNode("PSS",0,0);
             root.Nodes.Add("truser","유저",1,1);
             root.Nodes.Add("trrecord","인쇄 기록",2,2);
@@ -45,17 +46,22 @@ namespace PSS
             {
                 mainPanel.Controls.Clear();
                 mainPanel.Controls.Add(psspanel);
+                psspanel.Dock = mainPanel.Dock;
+                
                 
             }
             else if (treeView.SelectedNode.Text.Equals("유저")) 
             {
                 mainPanel.Controls.Clear();
                 mainPanel.Controls.Add(userpanel1);
+                userpanel1.Dock = mainPanel.Dock;
+                
             }
             else if (treeView.SelectedNode.Text.Equals("인쇄 기록")) 
             {
                 mainPanel.Controls.Clear();
                 mainPanel.Controls.Add(printrecode1);
+                printrecode1.Dock = mainPanel.Dock;
             }
         }
     }

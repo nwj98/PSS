@@ -18,7 +18,7 @@ namespace PSS
             //SetLabelText("", "", "", "", "", "");
         }
         public void SetLabelText(string id, string docname, string name,
-            string gender, string rank, string ip)
+            string gender, string rank, string ip, string log)
         {
             lblid.Text = id;
             lbldocname.Text = docname;
@@ -26,6 +26,12 @@ namespace PSS
             lblgender.Text = gender;
             lblrank.Text = rank;
             lblip.Text = ip;
+            lbllog.Text = log;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
         }
     }
     

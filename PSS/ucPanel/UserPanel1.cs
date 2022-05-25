@@ -24,7 +24,7 @@ namespace PSS.ucPanel
             
         }
 
-        void LoadData()
+        public void LoadData()
         {
             var db = Database.DBcontext.Db();
 
@@ -41,11 +41,32 @@ namespace PSS.ucPanel
                     employee.Emp_name,
                     employee.Gender,
                     employee.Rank,
-                    employee.Ip
+                    employee.Ip,
+                    employee.Log
                 });
             }
         }
+        public void FilterData(string logf, string logl, string dept,string name, string rank)
+        {
+            var db = Database.DBcontext.Db();
 
+            IEnumerable<Database.User> result = 
+                db.Query("employee").Where("log", ">=", logf).Where("log","<=",logl).Get<Database.User>();
+
+            foreach (var employee in result)
+            {
+                grid.Rows.Add(new object[]
+                {
+                    employee.Emp_id,
+                    employee.Dept_name,
+                    employee.Emp_name,
+                    employee.Gender,
+                    employee.Rank,
+                    employee.Ip,
+                    employee.Log
+                });
+            }
+        }
         private void UserPanel1_Load(object sender, EventArgs e)
         {
             LoadData();
@@ -69,7 +90,8 @@ namespace PSS.ucPanel
                 this.grid.CurrentRow.Cells[2].Value.ToString(),
                 this.grid.CurrentRow.Cells[3].Value.ToString(),
                 this.grid.CurrentRow.Cells[4].Value.ToString(),
-                this.grid.CurrentRow.Cells[5].Value.ToString());
+                this.grid.CurrentRow.Cells[5].Value.ToString(),
+                this.grid.CurrentRow.Cells[6].Value.ToString());
             propertyPage.Show();
         }
     }

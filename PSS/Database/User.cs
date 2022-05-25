@@ -14,5 +14,6 @@ namespace PSS.Database
         public string Gender { get; set; }
         public string Rank { get; set; }
         public string Ip { get; set; }
+        public DateTime Log { get; set; }
     }
 }

@@ -15,5 +15,6 @@ namespace PSS.Database
         public int File_size { get; set; }
         public string Page_size { get; set; }
         public string Color { get; set; }
+        public DateTime Log { get; set; }
     }
 }

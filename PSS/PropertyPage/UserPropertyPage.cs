@@ -23,10 +23,12 @@ namespace PSS.PropertyPage
             
         }
         public void SetPropertyLabel(string id, string docname, string name, string gender,
-            string rank, string ip)
+            string rank, string ip,string log)
         {
-            property.SetLabelText(id, docname, name, gender, rank, ip);
+            property.SetLabelText(id, docname, name, gender, rank, ip,log);
             tableLayoutPanel1.Controls.Add(property);
+            tableLayoutPanel1.Dock = property.Dock;
+            
         }
     }
 }

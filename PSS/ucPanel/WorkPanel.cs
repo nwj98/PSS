@@ -12,9 +12,16 @@ namespace PSS.ucPanel
 {
     public partial class WorkPanel : UserControl
     {
+        Filter.UserFilter filter;
         public WorkPanel()
         {
             InitializeComponent();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            filter = new Filter.UserFilter();
+            filter.Show();
         }
     }
 }
