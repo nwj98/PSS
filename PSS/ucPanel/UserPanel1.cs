@@ -32,6 +32,7 @@ namespace PSS.ucPanel
             // load all user in database
             IEnumerable<Database.User> result = db.Query("employee").Get<Database.User>();
 
+            grid.Rows.Clear();
             foreach (var employee in result)
             {
                 grid.Rows.Add(new object[]
@@ -53,6 +54,7 @@ namespace PSS.ucPanel
             IEnumerable<Database.User> result = 
                 db.Query("employee").Where("log", ">=", logf).Where("log","<=",logl).Get<Database.User>();
 
+            grid.Rows.Clear();
             foreach (var employee in result)
             {
                 grid.Rows.Add(new object[]
@@ -67,23 +69,31 @@ namespace PSS.ucPanel
                 });
             }
         }
+        public void SearchNameData(string name)
+        {
+
+            grid.ClearSelection();
+            grid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            foreach (DataGridViewRow row in grid.Rows)
+            {
+                if (row.Cells[2].Value.ToString().Equals(name))
+                {
+                    row.Selected = true;
+                    break;
+                }
+            }
+
+        }
+        public DataGridView getGrid() { return this.grid; }
         private void UserPanel1_Load(object sender, EventArgs e)
         {
-            LoadData();
+            //LoadData();
             
         }
 
         private void grid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             panel2.Controls.Clear();
-            /*property.SetLabelText(this.grid.CurrentRow.Cells[0].Value.ToString(),
-                this.grid.CurrentRow.Cells[1].Value.ToString(),
-                this.grid.CurrentRow.Cells[2].Value.ToString(),
-                this.grid.CurrentRow.Cells[3].Value.ToString(),
-                this.grid.CurrentRow.Cells[4].Value.ToString(),
-                this.grid.CurrentRow.Cells[5].Value.ToString());
-            panel2.Controls.Add(property);
-            */
             propertyPage = new PropertyPage.UserPropertyPage();
             propertyPage.SetPropertyLabel(this.grid.CurrentRow.Cells[0].Value.ToString(),
                 this.grid.CurrentRow.Cells[1].Value.ToString(),

@@ -19,7 +19,7 @@ namespace PSS.Database
             if(connection == null)
             {
                 connection = new MySqlConnection
-                    ("Server=localhost;Database=c#_employees;Uid=root;Pwd=5324;");
+                    ("Server=localhost;Database=c#_employees;Uid=root;Pwd=root;");
             }
             
     

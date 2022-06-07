@@ -40,7 +40,14 @@ namespace PSS
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.mainPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.workPanel1 = new PSS.ucPanel.WorkPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btrecycle = new System.Windows.Forms.Button();
+            this.btfindname = new System.Windows.Forms.Button();
+            this.btcsv = new System.Windows.Forms.Button();
+            this.btfilter = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btevent = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -51,6 +58,7 @@ namespace PSS
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -144,7 +152,7 @@ namespace PSS
             // 
             // splitContainer2.Panel2
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.workPanel1);
+            this.splitContainer2.Panel2.Controls.Add(this.tableLayoutPanel1);
             this.splitContainer2.Panel2MinSize = 180;
             this.splitContainer2.Size = new System.Drawing.Size(1108, 645);
             this.splitContainer2.SplitterDistance = 923;
@@ -163,13 +171,125 @@ namespace PSS
             this.mainPanel.Size = new System.Drawing.Size(921, 643);
             this.mainPanel.TabIndex = 0;
             // 
-            // workPanel1
+            // tableLayoutPanel1
             // 
-            this.workPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.workPanel1.Location = new System.Drawing.Point(0, 0);
-            this.workPanel1.Name = "workPanel1";
-            this.workPanel1.Size = new System.Drawing.Size(179, 643);
-            this.workPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btrecycle, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btfindname, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.btcsv, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btfilter, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.btevent, 0, 6);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 8;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(179, 643);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(179, 35);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "리스트 작업";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btrecycle
+            // 
+            this.btrecycle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btrecycle.Image = ((System.Drawing.Image)(resources.GetObject("btrecycle.Image")));
+            this.btrecycle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btrecycle.Location = new System.Drawing.Point(0, 35);
+            this.btrecycle.Margin = new System.Windows.Forms.Padding(0);
+            this.btrecycle.Name = "btrecycle";
+            this.btrecycle.Size = new System.Drawing.Size(179, 48);
+            this.btrecycle.TabIndex = 1;
+            this.btrecycle.Text = "새로고침";
+            this.btrecycle.UseVisualStyleBackColor = false;
+            this.btrecycle.Click += new System.EventHandler(this.btrecycle_Click);
+            // 
+            // btfindname
+            // 
+            this.btfindname.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btfindname.Image = ((System.Drawing.Image)(resources.GetObject("btfindname.Image")));
+            this.btfindname.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btfindname.Location = new System.Drawing.Point(0, 83);
+            this.btfindname.Margin = new System.Windows.Forms.Padding(0);
+            this.btfindname.Name = "btfindname";
+            this.btfindname.Size = new System.Drawing.Size(179, 48);
+            this.btfindname.TabIndex = 2;
+            this.btfindname.Text = "이름찾기";
+            this.btfindname.UseVisualStyleBackColor = false;
+            this.btfindname.Click += new System.EventHandler(this.btfindname_Click);
+            // 
+            // btcsv
+            // 
+            this.btcsv.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btcsv.Image = ((System.Drawing.Image)(resources.GetObject("btcsv.Image")));
+            this.btcsv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btcsv.Location = new System.Drawing.Point(0, 131);
+            this.btcsv.Margin = new System.Windows.Forms.Padding(0);
+            this.btcsv.Name = "btcsv";
+            this.btcsv.Size = new System.Drawing.Size(179, 48);
+            this.btcsv.TabIndex = 3;
+            this.btcsv.Text = "csv 저장하기";
+            this.btcsv.UseVisualStyleBackColor = false;
+            this.btcsv.Click += new System.EventHandler(this.btcsv_Click);
+            // 
+            // btfilter
+            // 
+            this.btfilter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btfilter.Image = ((System.Drawing.Image)(resources.GetObject("btfilter.Image")));
+            this.btfilter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btfilter.Location = new System.Drawing.Point(0, 179);
+            this.btfilter.Margin = new System.Windows.Forms.Padding(0);
+            this.btfilter.Name = "btfilter";
+            this.btfilter.Size = new System.Drawing.Size(179, 48);
+            this.btfilter.TabIndex = 4;
+            this.btfilter.Text = "필터";
+            this.btfilter.UseVisualStyleBackColor = false;
+            this.btfilter.Click += new System.EventHandler(this.btfilter_Click);
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Location = new System.Drawing.Point(0, 227);
+            this.label2.Margin = new System.Windows.Forms.Padding(0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(179, 35);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "이벤트 작업";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btevent
+            // 
+            this.btevent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btevent.Image = ((System.Drawing.Image)(resources.GetObject("btevent.Image")));
+            this.btevent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btevent.Location = new System.Drawing.Point(0, 262);
+            this.btevent.Margin = new System.Windows.Forms.Padding(0);
+            this.btevent.Name = "btevent";
+            this.btevent.Size = new System.Drawing.Size(179, 48);
+            this.btevent.TabIndex = 6;
+            this.btevent.Text = "이벤트 속성";
+            this.btevent.UseVisualStyleBackColor = true;
+            this.btevent.Click += new System.EventHandler(this.btevent_Click);
             // 
             // MainPage
             // 
@@ -195,6 +315,7 @@ namespace PSS
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,7 +331,14 @@ namespace PSS
         private System.Windows.Forms.Panel treePanel;
         private System.Windows.Forms.TreeView treeView;
         private System.Windows.Forms.ImageList imageList1;
-        private ucPanel.WorkPanel workPanel1;
         private System.Windows.Forms.TableLayoutPanel mainPanel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btrecycle;
+        private System.Windows.Forms.Button btfindname;
+        private System.Windows.Forms.Button btcsv;
+        private System.Windows.Forms.Button btfilter;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btevent;
     }
 }

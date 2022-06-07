@@ -46,6 +46,8 @@ namespace PSS.Property
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lbllog = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -72,6 +74,8 @@ namespace PSS.Property
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.lbllog);
             this.panel2.Controls.Add(this.lblpage);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.lblcolor);
@@ -103,7 +107,7 @@ namespace PSS.Property
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(364, 163);
+            this.label8.Location = new System.Drawing.Point(325, 163);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(77, 20);
             this.label8.TabIndex = 12;
@@ -112,7 +116,7 @@ namespace PSS.Property
             // lblcolor
             // 
             this.lblcolor.AutoSize = true;
-            this.lblcolor.Location = new System.Drawing.Point(459, 163);
+            this.lblcolor.Location = new System.Drawing.Point(441, 163);
             this.lblcolor.Name = "lblcolor";
             this.lblcolor.Size = new System.Drawing.Size(58, 20);
             this.lblcolor.TabIndex = 11;
@@ -121,7 +125,7 @@ namespace PSS.Property
             // lblsize
             // 
             this.lblsize.AutoSize = true;
-            this.lblsize.Location = new System.Drawing.Point(459, 104);
+            this.lblsize.Location = new System.Drawing.Point(441, 104);
             this.lblsize.Name = "lblsize";
             this.lblsize.Size = new System.Drawing.Size(58, 20);
             this.lblsize.TabIndex = 10;
@@ -130,7 +134,7 @@ namespace PSS.Property
             // lblfile
             // 
             this.lblfile.AutoSize = true;
-            this.lblfile.Location = new System.Drawing.Point(459, 46);
+            this.lblfile.Location = new System.Drawing.Point(441, 46);
             this.lblfile.Name = "lblfile";
             this.lblfile.Size = new System.Drawing.Size(58, 20);
             this.lblfile.TabIndex = 9;
@@ -166,7 +170,7 @@ namespace PSS.Property
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(364, 104);
+            this.label6.Location = new System.Drawing.Point(325, 104);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 20);
             this.label6.TabIndex = 5;
@@ -175,7 +179,7 @@ namespace PSS.Property
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(364, 46);
+            this.label5.Location = new System.Drawing.Point(325, 46);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 20);
             this.label5.TabIndex = 4;
@@ -217,6 +221,24 @@ namespace PSS.Property
             this.label1.TabIndex = 0;
             this.label1.Text = "인쇄번호 :";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(325, 223);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(102, 20);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "날짜 및 시간 :";
+            // 
+            // lbllog
+            // 
+            this.lbllog.AutoSize = true;
+            this.lbllog.Location = new System.Drawing.Point(441, 223);
+            this.lbllog.Name = "lbllog";
+            this.lbllog.Size = new System.Drawing.Size(58, 20);
+            this.lbllog.TabIndex = 14;
+            this.lbllog.Text = "label10";
+            // 
             // PrintProperty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -252,5 +274,7 @@ namespace PSS.Property
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblpage;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbllog;
     }
 }

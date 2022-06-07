@@ -12,6 +12,7 @@ namespace PSS
 {
     public partial class UserProperty : UserControl
     {
+        
         public UserProperty()
         {
             InitializeComponent();

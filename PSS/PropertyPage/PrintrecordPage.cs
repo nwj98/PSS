@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PSS.ucPanel
+namespace PSS.PropertyPage
 {
-    public partial class UserPanel2 : UserControl
+    public partial class PrintrecordPage : Form
     {
-        public UserPanel2()
+        public PrintrecordPage()
         {
             InitializeComponent();
         }
