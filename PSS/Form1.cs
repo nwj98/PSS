@@ -57,7 +57,6 @@ namespace PSS
         private void btnLogin_Click(object sender, EventArgs e)
         {
             this.Hide();
-            
             main.Show();
         }
 

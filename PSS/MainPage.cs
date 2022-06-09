@@ -14,12 +14,15 @@ namespace PSS
     public partial class MainPage : Form
     {
         ucPanel.PrintrecodePanel1 printrecode1 = new ucPanel.PrintrecodePanel1();
-        ucPanel.PrintrecodePanel2 printrecode2 = new ucPanel.PrintrecodePanel2();
+        ucPanel.PrintrecordPanel printrecode = new ucPanel.PrintrecordPanel();
         ucPanel.PSSPanel psspanel = new ucPanel.PSSPanel();
         ucPanel.UserPanel1 userpanel1 = new ucPanel.UserPanel1();
-        ucPanel.UserPanel2 userpanel2 = new ucPanel.UserPanel2();
-        
-        
+        ucPanel.UserPanel userpanel = new ucPanel.UserPanel();
+
+        PropertyPage.UserPropertyPage userProperty;
+
+
+
         public MainPage()
         {
             InitializeComponent();
@@ -54,16 +57,23 @@ namespace PSS
             else if (treeView.SelectedNode.Text.Equals("유저")) 
             {
                 mainPanel.Controls.Clear();
+                /*
                 userpanel1.LoadData();
                 mainPanel.Controls.Add(userpanel1);
                 userpanel1.Dock = mainPanel.Dock;
-                
+                */
+                userpanel.LoadData();
+                mainPanel.Controls.Add(userpanel);
+                userpanel.Dock = mainPanel.Dock;
+
+
             }
             else if (treeView.SelectedNode.Text.Equals("인쇄 기록")) 
             {
                 mainPanel.Controls.Clear();
                 printrecode1.LoadData();
                 mainPanel.Controls.Add(printrecode1);
+                //mainPanel.Controls.Add(printrecode);
                 printrecode1.Dock = mainPanel.Dock;
             }
         }
@@ -86,9 +96,15 @@ namespace PSS
         public void UserDataGet(string logf,string logl, string dept, string name, string rank)
         {
             mainPanel.Controls.Clear();
+            /*
             userpanel1.FilterData(logf, logl, dept, name, rank);
             mainPanel.Controls.Add(userpanel1);
             userpanel1.Dock = mainPanel.Dock;
+            */
+            userpanel.FilterData(logf, logl, dept, name, rank);
+            mainPanel.Controls.Add(userpanel);
+            userpanel.Dock = mainPanel.Dock;
+
         }
         public void PrintrecordDataGet(string logf, string logl,
         string name, string pagesize, string isColor)
@@ -105,7 +121,8 @@ namespace PSS
                 SaveFileDialog save = GetCSVSave();
                 if (save.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    Save_CSV(save.FileName, userpanel1.getGrid(), true);
+                    //Save_CSV(save.FileName, userpanel1.getGrid(), true);
+                    Save_CSV(save.FileName, userpanel.getGrid(), true);
                 }
             }
             else if(treeView.SelectedNode.Text.Equals("인쇄 기록"))
@@ -182,6 +199,7 @@ namespace PSS
         {
             if (treeView.SelectedNode.Text.Equals("유저"))
             {
+                /*
                 DataGridView grid = userpanel1.getGrid();
                 PropertyPage.UserPropertyPage propertyPage = new PropertyPage.UserPropertyPage();
                 propertyPage.SetPropertyLabel(grid.CurrentRow.Cells[0].Value.ToString(),
@@ -191,7 +209,19 @@ namespace PSS
                 grid.CurrentRow.Cells[4].Value.ToString(),
                 grid.CurrentRow.Cells[5].Value.ToString(),
                 grid.CurrentRow.Cells[6].Value.ToString());
-                propertyPage.Show();
+                propertyPage.Show();*/
+                
+                DataGridView grid = userpanel.getGrid();
+                userProperty = new PropertyPage.UserPropertyPage();
+                userProperty.SetContext(grid.CurrentRow.Cells[0].Value.ToString(),
+                grid.CurrentRow.Cells[1].Value.ToString(),
+                grid.CurrentRow.Cells[2].Value.ToString(),
+                grid.CurrentRow.Cells[3].Value.ToString(),
+                grid.CurrentRow.Cells[4].Value.ToString(),
+                grid.CurrentRow.Cells[5].Value.ToString(),
+                grid.CurrentRow.Cells[6].Value.ToString());
+                userProperty.Show();
+
             }
             else if (treeView.SelectedNode.Text.Equals("인쇄 기록"))
             {
@@ -204,9 +234,14 @@ namespace PSS
             if (treeView.SelectedNode.Text.Equals("유저"))
             {
                 mainPanel.Controls.Clear();
+                /*
                 userpanel1.LoadData();
                 mainPanel.Controls.Add(userpanel1);
                 userpanel1.Dock = mainPanel.Dock;
+                */
+                userpanel.LoadData();
+                mainPanel.Controls.Add(userpanel);
+                userpanel.Dock = mainPanel.Dock;
 
             }
             else if (treeView.SelectedNode.Text.Equals("인쇄 기록"))
@@ -229,15 +264,84 @@ namespace PSS
             }
             else if (treeView.SelectedNode.Text.Equals("인쇄 기록"))
             {
-                
+                Search.NameSearch search = new Search.NameSearch();
+                search.DataSendEvent += new Search.UserNameSearchEventHandler(this.PrinterrecordNameSearch);
+                search.Show();
             }
         }
         public void UserNameSearch(string name)
         {
-            
+            /*
             userpanel1.SearchNameData(name);
             mainPanel.Controls.Add(userpanel1);
             userpanel1.Dock = mainPanel.Dock;
+            */
+
+            userpanel.SearchNameData(name);
+            mainPanel.Controls.Add(userpanel);
+            userpanel.Dock = mainPanel.Dock;
+        }
+        public void PrinterrecordNameSearch(string name)
+        {
+            /*
+            userpanel1.SearchNameData(name);
+            mainPanel.Controls.Add(userpanel1);
+            userpanel1.Dock = mainPanel.Dock;
+            */
+
+            printrecode1.SearchNameData(name);
+            mainPanel.Controls.Add(printrecode1);
+            printrecode1.Dock = mainPanel.Dock;
+        }
+
+        private void 닫기ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btpreview_Click(object sender, EventArgs e)
+        {
+            if (treeView.SelectedNode.Text.Equals("인쇄 기록"))
+            {
+                string print_num = "";
+                DataGridView grid = printrecode1.getGrid();
+                
+                //grid.ClearSelection();
+                grid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                foreach (DataGridViewRow row in grid.Rows)
+                {
+                    if (row.Selected)
+                    {
+                        print_num = row.Cells[0].Value.ToString();
+                    }
+                    
+
+                }
+
+                string file_path = printrecode1.GetFilepath(print_num);
+
+                System.Diagnostics.ProcessStartInfo pri = new System.Diagnostics.ProcessStartInfo();
+
+                System.Diagnostics.Process pro = new System.Diagnostics.Process();
+
+                pri.FileName = "cmd.exe";
+                pri.CreateNoWindow = false; //flase가 띄우기, true가 안 띄우기
+                pri.UseShellExecute = false;
+
+                pri.RedirectStandardInput = true;
+                pri.RedirectStandardOutput = true;
+                pri.RedirectStandardError = true;
+
+                pro.StartInfo = pri;
+                pro.Start();
+
+                pro.StandardInput.Write(@"C:\Windows\System32\xpsrchvw.exe "+ file_path + Environment.NewLine);
+                pro.StandardInput.Close();
+                string resultValue = pro.StandardOutput.ReadToEnd();
+                pro.WaitForExit();
+                pro.Close();
+                
+            }
         }
     }
 }

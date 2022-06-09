@@ -17,16 +17,11 @@ namespace PSS.Property
             InitializeComponent();
         }
 
-        public void SetLabelText(string num, string name, string docname,
-            string page, string file, string size, string color, string log)
+        public void SetLabelText(string num, string name,  string size,string log)
         {
             lblnum.Text = num;
-            lbldocname.Text = docname;
             lblname.Text = name;
-            lblpage.Text = page;
-            lblfile.Text = file;
             lblsize.Text = size;
-            lblcolor.Text = color;
             lbllog.Text = log;
         }
     }

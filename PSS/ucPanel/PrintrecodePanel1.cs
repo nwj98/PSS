@@ -33,13 +33,8 @@ namespace PSS.ucPanel
                 {
                     printrecord.Print_num,
                     printrecord.Emp_name,
-                    printrecord.Doc_name,
-                    printrecord.Doc_page,
-                    printrecord.File_size,
                     printrecord.Page_size,
-                    printrecord.Color,
                     printrecord.Log
-
                 }) ;
             }
         }
@@ -57,36 +52,22 @@ namespace PSS.ucPanel
                 {
                     printrecord.Print_num,
                     printrecord.Emp_name,
-                    printrecord.Doc_name,
-                    printrecord.Doc_page,
-                    printrecord.File_size,
                     printrecord.Page_size,
-                    printrecord.Color,
                     printrecord.Log
                 });
             }
         }
         public void SearchNameData(string name)
         {
-            var db = Database.DBcontext.Db();
-
-            IEnumerable<Database.Printrecord> result =
-                db.Query("printrecord").Where("emp_name",name).Get<Database.Printrecord>();
-
-            grid.Rows.Clear();
-            foreach (var printrecord in result)
+            grid.ClearSelection();
+            grid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            foreach (DataGridViewRow row in grid.Rows)
             {
-                grid.Rows.Add(new object[]
+                if (row.Cells[1].Value.ToString().Equals(name))
                 {
-                    printrecord.Print_num,
-                    printrecord.Emp_name,
-                    printrecord.Doc_name,
-                    printrecord.Doc_page,
-                    printrecord.File_size,
-                    printrecord.Page_size,
-                    printrecord.Color,
-                    printrecord.Log
-                });
+                    row.Selected = true;
+                    break;
+                }
             }
         }
         public DataGridView getGrid() { return this.grid; }
@@ -101,16 +82,29 @@ namespace PSS.ucPanel
             property.SetLabelText(this.grid.CurrentRow.Cells[0].Value.ToString(),
                 this.grid.CurrentRow.Cells[1].Value.ToString(),
                 this.grid.CurrentRow.Cells[2].Value.ToString(),
-                this.grid.CurrentRow.Cells[3].Value.ToString(),
-                this.grid.CurrentRow.Cells[4].Value.ToString(),
-                this.grid.CurrentRow.Cells[5].Value.ToString(),
-                this.grid.CurrentRow.Cells[6].Value.ToString(),
-                this.grid.CurrentRow.Cells[7].Value.ToString()
+                this.grid.CurrentRow.Cells[3].Value.ToString()
                 );
             tableLayoutPanel1.Controls.Add(property);
             property.Dock = tableLayoutPanel1.Dock;
             
         }
+        public string GetFilepath(string print_num)
+        {
+            var db = Database.DBcontext.Db();
+            string filepath="";
+            IEnumerable<Database.Printrecord> result =
+                db.Query("printrecord").Where("print_num",print_num).Get<Database.Printrecord>();
+
+            
+            foreach (var printrecord in result)
+            {
+                filepath = printrecord.File_path;
+            }
+
+            return filepath;
+        }
     }
+
+
 
 }

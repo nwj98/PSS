@@ -33,6 +33,7 @@ namespace PSS
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.파일ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.닫기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.보기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.treePanel = new System.Windows.Forms.Panel();
@@ -48,6 +49,7 @@ namespace PSS
             this.btfilter = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btevent = new System.Windows.Forms.Button();
+            this.btpreview = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -75,9 +77,18 @@ namespace PSS
             // 
             // 파일ToolStripMenuItem
             // 
+            this.파일ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.닫기ToolStripMenuItem});
             this.파일ToolStripMenuItem.Name = "파일ToolStripMenuItem";
             this.파일ToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
             this.파일ToolStripMenuItem.Text = "파일";
+            // 
+            // 닫기ToolStripMenuItem
+            // 
+            this.닫기ToolStripMenuItem.Name = "닫기ToolStripMenuItem";
+            this.닫기ToolStripMenuItem.Size = new System.Drawing.Size(122, 26);
+            this.닫기ToolStripMenuItem.Text = "닫기";
+            this.닫기ToolStripMenuItem.Click += new System.EventHandler(this.닫기ToolStripMenuItem_Click);
             // 
             // 보기ToolStripMenuItem
             // 
@@ -182,16 +193,20 @@ namespace PSS
             this.tableLayoutPanel1.Controls.Add(this.btfilter, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.btevent, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.btpreview, 0, 7);
+            this.tableLayoutPanel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 8;
+            this.tableLayoutPanel1.RowCount = 9;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 48F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(179, 643);
@@ -288,8 +303,22 @@ namespace PSS
             this.btevent.Size = new System.Drawing.Size(179, 48);
             this.btevent.TabIndex = 6;
             this.btevent.Text = "이벤트 속성";
-            this.btevent.UseVisualStyleBackColor = true;
+            this.btevent.UseVisualStyleBackColor = false;
             this.btevent.Click += new System.EventHandler(this.btevent_Click);
+            // 
+            // btpreview
+            // 
+            this.btpreview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btpreview.Image = global::PSS.Properties.Resources.icons8_문서_열기_40;
+            this.btpreview.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btpreview.Location = new System.Drawing.Point(0, 310);
+            this.btpreview.Margin = new System.Windows.Forms.Padding(0);
+            this.btpreview.Name = "btpreview";
+            this.btpreview.Size = new System.Drawing.Size(179, 48);
+            this.btpreview.TabIndex = 7;
+            this.btpreview.Text = "미리보기";
+            this.btpreview.UseVisualStyleBackColor = false;
+            this.btpreview.Click += new System.EventHandler(this.btpreview_Click);
             // 
             // MainPage
             // 
@@ -340,5 +369,7 @@ namespace PSS
         private System.Windows.Forms.Button btfilter;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btevent;
+        private System.Windows.Forms.Button btpreview;
+        private System.Windows.Forms.ToolStripMenuItem 닫기ToolStripMenuItem;
     }
 }

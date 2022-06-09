@@ -37,7 +37,7 @@ namespace PSS.PropertyPage
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(648, 503);
             this.Name = "PrintrecordPage";
-            this.Text = "PrintrecordPage";
+            this.Text = "Printer Security Solution - 이벤트 속성";
             this.ResumeLayout(false);
 
         }

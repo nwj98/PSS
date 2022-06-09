@@ -16,19 +16,36 @@ namespace PSS.PropertyPage
         public UserPropertyPage()
         {
             InitializeComponent();
-        }
-
-        private void UserPropertyPage_Load(object sender, EventArgs e)
-        {
             
         }
+
+        
         public void SetPropertyLabel(string id, string docname, string name, string gender,
             string rank, string ip,string log)
         {
             property.SetLabelText(id, docname, name, gender, rank, ip,log);
-            tableLayoutPanel1.Controls.Add(property);
-            tableLayoutPanel1.Dock = property.Dock;
             
+            
+        }
+        public void SetContext(string id, string docname, string name, string gender,
+            string rank, string ip, string log)
+        {
+            lblid.Text = id;
+            lbldocname.Text = docname;
+            lblname.Text = name;
+            lblgender.Text = gender;
+            lblrank.Text = rank;
+            lblip.Text = ip;
+            lbllog.Text = log;
+        }
+        private void UserPropertyPage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

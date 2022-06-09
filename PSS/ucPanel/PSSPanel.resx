@@ -57,4 +57,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>SMB(Small Medium Business) 향 PSS(Printing Security Soulution)
+프린트 로그 기능
+    - 특정 프린터에서 출력 된 모든 프린트 내역을 관리함.
+    - 로그에는 인쇄 요청 유저 정보, 프린트 파일 정보, 인쇄 시각 등의 정보가 담김.
+
+프린트 Proxy 기능
+    - 사용자가 프린터로 직접 요청을 보내게 되면 인쇄 로그를 남길 수 없기 때문에 PSS 솔        루션의 프린터 Proxy를 통해서 인쇄하도록 함.
+    - 프린터에서 기본적으로 사용하는 RAW 포트인 9100 TCP 포트 또는 IPP(Internet            Printing Protocol)  사용을 위한 631 TCP 포트를 사용할 예정.
+    - 해당 포트로 수신한 데이터를 기록하고 프린터로 포워딩 함.
+
+Print Job 파일 저장 기능
+    - 프린트 Proxy 포트를 통해 수신한 데이터를 로컬 저장소의 특정 장소에 보관함.
+    - 추후 관리자 콘솔을 통해 해당 파일들을 다시 조회 할 수 있음.
+
+유저 식별 기능
+    - 프린트 요청을 보낸 유저를 식별함.
+    - IPPS 프로토콜을 사용해서 PrintJob 데이터에 서명하는 방법이 가장 좋지만 개발기간        의 여건 상 Host 의 IP 로 식별하는 방법을 사용하기로 함.
+
+인쇄 내역 조회 기능
+    - 위의 기능들을 통해 저장된 프린트 내역을 관리자 콘솔을 통해 조회함.
+    - 의심이 되는 인쇄 작업이 있을 경우 해당 파일을 다시 열 수 있어야 함.
+</value>
+  </data>
 </root>
