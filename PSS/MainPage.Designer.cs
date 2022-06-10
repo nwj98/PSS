@@ -34,7 +34,6 @@ namespace PSS
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.파일ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.닫기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.보기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.treePanel = new System.Windows.Forms.Panel();
             this.treeView = new System.Windows.Forms.TreeView();
@@ -67,8 +66,7 @@ namespace PSS
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.파일ToolStripMenuItem,
-            this.보기ToolStripMenuItem});
+            this.파일ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1262, 28);
@@ -86,15 +84,9 @@ namespace PSS
             // 닫기ToolStripMenuItem
             // 
             this.닫기ToolStripMenuItem.Name = "닫기ToolStripMenuItem";
-            this.닫기ToolStripMenuItem.Size = new System.Drawing.Size(122, 26);
+            this.닫기ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.닫기ToolStripMenuItem.Text = "닫기";
             this.닫기ToolStripMenuItem.Click += new System.EventHandler(this.닫기ToolStripMenuItem_Click);
-            // 
-            // 보기ToolStripMenuItem
-            // 
-            this.보기ToolStripMenuItem.Name = "보기ToolStripMenuItem";
-            this.보기ToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
-            this.보기ToolStripMenuItem.Text = "보기";
             // 
             // splitContainer1
             // 
@@ -354,7 +346,6 @@ namespace PSS
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 파일ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 보기ToolStripMenuItem;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.Panel treePanel;

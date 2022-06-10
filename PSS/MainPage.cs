@@ -38,6 +38,7 @@ namespace PSS
             root.Nodes.Add("truser","유저",1,1);
             root.Nodes.Add("trrecord","인쇄 기록",2,2);
             treeView.Nodes.Add(root);
+            btpreview.Visible = false;
         }
 
         private void MainPage_FormClosing(object sender, FormClosingEventArgs e)
@@ -52,6 +53,7 @@ namespace PSS
                 mainPanel.Controls.Clear();
                 mainPanel.Controls.Add(psspanel);
                 psspanel.Dock = mainPanel.Dock;
+                btpreview.Visible = false;
                 
                 
             }
@@ -66,6 +68,7 @@ namespace PSS
                 userpanel.LoadData();
                 mainPanel.Controls.Add(userpanel);
                 userpanel.Dock = mainPanel.Dock;
+                btpreview.Visible = false;
 
 
             }
@@ -81,6 +84,7 @@ namespace PSS
                 printrecord.LoadData();
                 mainPanel.Controls.Add(printrecord);
                 printrecord.Dock = mainPanel.Dock;
+                btpreview.Visible = true;
             }
         }
 
