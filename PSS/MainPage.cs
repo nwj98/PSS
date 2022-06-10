@@ -13,10 +13,9 @@ namespace PSS
 {
     public partial class MainPage : Form
     {
-        ucPanel.PrintrecodePanel1 printrecode1 = new ucPanel.PrintrecodePanel1();
+        
         ucPanel.PrintrecordPanel printrecord = new ucPanel.PrintrecordPanel();
         ucPanel.PSSPanel psspanel = new ucPanel.PSSPanel();
-        ucPanel.UserPanel1 userpanel1 = new ucPanel.UserPanel1();
         ucPanel.UserPanel userpanel = new ucPanel.UserPanel();
 
         PropertyPage.UserPropertyPage userProperty;
@@ -60,11 +59,7 @@ namespace PSS
             else if (treeView.SelectedNode.Text.Equals("유저")) 
             {
                 mainPanel.Controls.Clear();
-                /*
-                userpanel1.LoadData();
-                mainPanel.Controls.Add(userpanel1);
-                userpanel1.Dock = mainPanel.Dock;
-                */
+                
                 userpanel.LoadData();
                 mainPanel.Controls.Add(userpanel);
                 userpanel.Dock = mainPanel.Dock;
@@ -75,11 +70,7 @@ namespace PSS
             else if (treeView.SelectedNode.Text.Equals("인쇄 기록")) 
             {
                 mainPanel.Controls.Clear();
-               /*
-                printrecode1.LoadData();
-                mainPanel.Controls.Add(printrecode1);
-                printrecode1.Dock = mainPanel.Dock;
-               */
+               
 
                 printrecord.LoadData();
                 mainPanel.Controls.Add(printrecord);
@@ -106,11 +97,7 @@ namespace PSS
         public void UserDataGet(string logf,string logl, string dept, string name, string rank)
         {
             mainPanel.Controls.Clear();
-            /*
-            userpanel1.FilterData(logf, logl, dept, name, rank);
-            mainPanel.Controls.Add(userpanel1);
-            userpanel1.Dock = mainPanel.Dock;
-            */
+            
             userpanel.FilterData(logf, logl, dept, name, rank);
             mainPanel.Controls.Add(userpanel);
             userpanel.Dock = mainPanel.Dock;
@@ -119,11 +106,7 @@ namespace PSS
         public void PrintrecordDataGet(string logf, string logl, string name)
         {
             mainPanel.Controls.Clear();
-            /*
-            printrecode1.FilterData(logf, logl, name, pagesize, isColor);
-            mainPanel.Controls.Add(printrecode1);
-            printrecode1.Dock = mainPanel.Dock;
-            */
+            
             printrecord.FilterData(logf, logl, name);
             mainPanel.Controls.Add(printrecord);
             printrecord.Dock = mainPanel.Dock;
@@ -135,7 +118,7 @@ namespace PSS
                 SaveFileDialog save = GetCSVSave();
                 if (save.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    //Save_CSV(save.FileName, userpanel1.getGrid(), true);
+                    
                     Save_CSV(save.FileName, userpanel.getGrid(), true);
                 }
             }
@@ -144,7 +127,7 @@ namespace PSS
                 SaveFileDialog save = GetCSVSave();
                 if (save.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    //Save_CSV(save.FileName, printrecode1.getGrid(), true);
+                    
                     Save_CSV(save.FileName, printrecord.getGrid(), true);
                 }
             }
@@ -214,17 +197,7 @@ namespace PSS
         {
             if (treeView.SelectedNode.Text.Equals("유저"))
             {
-                /*
-                DataGridView grid = userpanel1.getGrid();
-                PropertyPage.UserPropertyPage propertyPage = new PropertyPage.UserPropertyPage();
-                propertyPage.SetPropertyLabel(grid.CurrentRow.Cells[0].Value.ToString(),
-                grid.CurrentRow.Cells[1].Value.ToString(),
-                grid.CurrentRow.Cells[2].Value.ToString(),
-                grid.CurrentRow.Cells[3].Value.ToString(),
-                grid.CurrentRow.Cells[4].Value.ToString(),
-                grid.CurrentRow.Cells[5].Value.ToString(),
-                grid.CurrentRow.Cells[6].Value.ToString());
-                propertyPage.Show();*/
+                
                 
                 DataGridView grid = userpanel.getGrid();
                 userProperty = new PropertyPage.UserPropertyPage();
@@ -255,11 +228,7 @@ namespace PSS
             if (treeView.SelectedNode.Text.Equals("유저"))
             {
                 mainPanel.Controls.Clear();
-                /*
-                userpanel1.LoadData();
-                mainPanel.Controls.Add(userpanel1);
-                userpanel1.Dock = mainPanel.Dock;
-                */
+                
                 userpanel.LoadData();
                 mainPanel.Controls.Add(userpanel);
                 userpanel.Dock = mainPanel.Dock;
@@ -268,11 +237,7 @@ namespace PSS
             else if (treeView.SelectedNode.Text.Equals("인쇄 기록"))
             {
                 mainPanel.Controls.Clear();
-                /*
-                printrecode1.LoadData();
-                mainPanel.Controls.Add(printrecode1);
-                printrecode1.Dock = mainPanel.Dock;
-                */
+               
                 printrecord.LoadData();
                 mainPanel.Controls.Add(printrecord);
                 printrecord.Dock = mainPanel.Dock;
@@ -297,11 +262,7 @@ namespace PSS
         }
         public void UserNameSearch(string name)
         {
-            /*
-            userpanel1.SearchNameData(name);
-            mainPanel.Controls.Add(userpanel1);
-            userpanel1.Dock = mainPanel.Dock;
-            */
+            
 
             userpanel.SearchNameData(name);
             mainPanel.Controls.Add(userpanel);
@@ -309,11 +270,7 @@ namespace PSS
         }
         public void PrinterrecordNameSearch(string name)
         {
-            /*
-            userpanel1.SearchNameData(name);
-            mainPanel.Controls.Add(userpanel1);
-            userpanel1.Dock = mainPanel.Dock;
-            */
+            
 
             printrecord.SearchNameData(name);
             mainPanel.Controls.Add(printrecord);
