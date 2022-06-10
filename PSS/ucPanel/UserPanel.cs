@@ -47,9 +47,80 @@ namespace PSS.ucPanel
         {
             var db = Database.DBcontext.Db();
 
-            IEnumerable<Database.User> result =
+            /*IEnumerable<Database.User> result =
                 db.Query("employee").Where("log", ">=", logf).Where("log", "<=", logl).Get<Database.User>();
+            */
+            IEnumerable<Database.User> result=null;
 
+
+            if (!dept.Equals(""))
+            {
+                if (!name.Equals(""))
+                {
+                    if (!rank.Equals(""))
+                    {
+                        result = db.Query("employee").Where("log", ">=", logf)
+                            .Where("log", "<=", logl).Where("dept_name",dept).Where("emp_name",name)
+                            .Where("rank",rank).Get<Database.User>();
+                    }
+                    else
+                    {
+                        result = db.Query("employee").Where("log", ">=", logf)
+                            .Where("log", "<=", logl).Where("dept_name", dept).Where("emp_name", name)
+                            .Get<Database.User>();
+                    }
+                }
+                else
+                {
+                    if (!rank.Equals(""))
+                    {
+                        result = db.Query("employee").Where("log", ">=", logf)
+                            .Where("log", "<=", logl).Where("dept_name", dept)
+                            .Where("rank", rank).Get<Database.User>();
+                    }
+                    else
+                    {
+                        result = db.Query("employee").Where("log", ">=", logf)
+                            .Where("log", "<=", logl).Where("dept_name", dept)
+                            .Get<Database.User>();
+                    }
+                }
+            }
+            else if(dept.Equals(""))
+            {
+                if (!name.Equals(""))
+                {
+                    if (!rank.Equals(""))
+                    {
+                        result = db.Query("employee").Where("log", ">=", logf)
+                            .Where("log", "<=", logl).Where("emp_name", name)
+                            .Where("rank", rank).Get<Database.User>();
+                    }
+                    else
+                    {
+                        result = db.Query("employee").Where("log", ">=", logf)
+                            .Where("log", "<=", logl).Where("emp_name", name)
+                            .Get<Database.User>();
+                    }
+                }
+                else
+                {
+                    if (!rank.Equals(""))
+                    {
+                        result = db.Query("employee").Where("log", ">=", logf)
+                            .Where("log", "<=", logl)
+                            .Where("rank", rank).Get<Database.User>();
+                    }
+                    else
+                    {
+                        result = db.Query("employee").Where("log", ">=", logf)
+                            .Where("log", "<=", logl)
+                            .Get<Database.User>();
+                    }
+                }
+            }
+            
+            
             grid.Rows.Clear();
             foreach (var employee in result)
             {
@@ -70,12 +141,13 @@ namespace PSS.ucPanel
 
             grid.ClearSelection();
             grid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            
             foreach (DataGridViewRow row in grid.Rows)
             {
                 if (row.Cells[2].Value.ToString().Equals(name))
                 {
                     row.Selected = true;
-                    break;
+                    //break;
                 }
             }
 

@@ -159,7 +159,7 @@ namespace PSS.ucPanel
             // 
             // Column6
             // 
-            this.Column6.HeaderText = "용지크기";
+            this.Column6.HeaderText = "파일크기";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
             // 

@@ -17,7 +17,7 @@ namespace PSS.Property
             InitializeComponent();
         }
 
-        public void SetLabelText(string num, string name,  string size,string log)
+        public void SetLabelText(string num, string name, string size,string log)
         {
             lblnum.Text = num;
             lblname.Text = name;

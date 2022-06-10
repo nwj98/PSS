@@ -56,8 +56,30 @@ namespace PSS
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            main.Show();
+            if (txtUser.Text == "admin@company.com")
+            {
+                if (txtPassword.Text == "1234")
+                {
+                    this.Hide();
+                    main.Show();
+                }
+                else
+                {
+                    MessageBox.Show("비밀번호를 다시 입력하시오","Password error", 
+                        MessageBoxButtons.OKCancel,MessageBoxIcon.Warning);
+                    txtUser.Text = "ID입력";
+                    txtPassword.Text = "PW입력";
+                }
+            }
+            else
+            {
+                MessageBox.Show("아이디를 다시 입력하시오", "ID error",
+                        MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                txtUser.Text = "ID입력";
+                txtPassword.Text = "PW입력";
+            }
+            //this.Hide();
+            //main.Show();
         }
 
         private void Form1_Load(object sender, EventArgs e)

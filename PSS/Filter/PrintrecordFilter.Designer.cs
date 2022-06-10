@@ -35,13 +35,9 @@ namespace PSS.Filter
             this.panel3 = new System.Windows.Forms.Panel();
             this.tbloglast = new System.Windows.Forms.DateTimePicker();
             this.tblogfirst = new System.Windows.Forms.DateTimePicker();
-            this.tbcolor = new System.Windows.Forms.TextBox();
-            this.tbpagesize = new System.Windows.Forms.TextBox();
             this.tbname = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -86,13 +82,9 @@ namespace PSS.Filter
             this.panel3.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel3.Controls.Add(this.tbloglast);
             this.panel3.Controls.Add(this.tblogfirst);
-            this.panel3.Controls.Add(this.tbcolor);
-            this.panel3.Controls.Add(this.tbpagesize);
             this.panel3.Controls.Add(this.tbname);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(4, 3);
@@ -115,20 +107,6 @@ namespace PSS.Filter
             this.tblogfirst.Name = "tblogfirst";
             this.tblogfirst.Size = new System.Drawing.Size(125, 27);
             this.tblogfirst.TabIndex = 23;
-            // 
-            // tbcolor
-            // 
-            this.tbcolor.Location = new System.Drawing.Point(192, 220);
-            this.tbcolor.Name = "tbcolor";
-            this.tbcolor.Size = new System.Drawing.Size(125, 27);
-            this.tbcolor.TabIndex = 22;
-            // 
-            // tbpagesize
-            // 
-            this.tbpagesize.Location = new System.Drawing.Point(192, 163);
-            this.tbpagesize.Name = "tbpagesize";
-            this.tbpagesize.Size = new System.Drawing.Size(125, 27);
-            this.tbpagesize.TabIndex = 20;
             // 
             // tbname
             // 
@@ -154,24 +132,6 @@ namespace PSS.Filter
             this.label7.Size = new System.Drawing.Size(39, 20);
             this.label7.TabIndex = 15;
             this.label7.Text = "시작";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(42, 223);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "컬러여부 :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(42, 163);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "용지크기 :";
             // 
             // label2
             // 
@@ -215,13 +175,9 @@ namespace PSS.Filter
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DateTimePicker tbloglast;
         private System.Windows.Forms.DateTimePicker tblogfirst;
-        private System.Windows.Forms.TextBox tbcolor;
-        private System.Windows.Forms.TextBox tbpagesize;
         private System.Windows.Forms.TextBox tbname;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
     }

@@ -82,7 +82,7 @@ namespace PSS.Property
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(325, 104);
+            this.label7.Location = new System.Drawing.Point(42, 224);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(102, 20);
             this.label7.TabIndex = 15;
@@ -91,7 +91,7 @@ namespace PSS.Property
             // lbllog
             // 
             this.lbllog.AutoSize = true;
-            this.lbllog.Location = new System.Drawing.Point(441, 104);
+            this.lbllog.Location = new System.Drawing.Point(158, 224);
             this.lbllog.Name = "lbllog";
             this.lbllog.Size = new System.Drawing.Size(58, 20);
             this.lbllog.TabIndex = 14;
@@ -100,7 +100,7 @@ namespace PSS.Property
             // lblsize
             // 
             this.lblsize.AutoSize = true;
-            this.lblsize.Location = new System.Drawing.Point(441, 46);
+            this.lblsize.Location = new System.Drawing.Point(142, 168);
             this.lblsize.Name = "lblsize";
             this.lblsize.Size = new System.Drawing.Size(58, 20);
             this.lblsize.TabIndex = 10;
@@ -109,7 +109,7 @@ namespace PSS.Property
             // lblname
             // 
             this.lblname.AutoSize = true;
-            this.lblname.Location = new System.Drawing.Point(142, 104);
+            this.lblname.Location = new System.Drawing.Point(115, 105);
             this.lblname.Name = "lblname";
             this.lblname.Size = new System.Drawing.Size(50, 20);
             this.lblname.TabIndex = 7;
@@ -127,16 +127,16 @@ namespace PSS.Property
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(325, 46);
+            this.label6.Location = new System.Drawing.Point(42, 168);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 20);
             this.label6.TabIndex = 5;
-            this.label6.Text = "용지크기 :";
+            this.label6.Text = "파일크기 :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 104);
+            this.label2.Location = new System.Drawing.Point(42, 105);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 20);
             this.label2.TabIndex = 1;

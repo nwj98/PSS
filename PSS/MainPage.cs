@@ -14,12 +14,13 @@ namespace PSS
     public partial class MainPage : Form
     {
         ucPanel.PrintrecodePanel1 printrecode1 = new ucPanel.PrintrecodePanel1();
-        ucPanel.PrintrecordPanel printrecode = new ucPanel.PrintrecordPanel();
+        ucPanel.PrintrecordPanel printrecord = new ucPanel.PrintrecordPanel();
         ucPanel.PSSPanel psspanel = new ucPanel.PSSPanel();
         ucPanel.UserPanel1 userpanel1 = new ucPanel.UserPanel1();
         ucPanel.UserPanel userpanel = new ucPanel.UserPanel();
 
         PropertyPage.UserPropertyPage userProperty;
+        PropertyPage.PrintrecordPage printrecordProperty;
 
 
 
@@ -71,10 +72,15 @@ namespace PSS
             else if (treeView.SelectedNode.Text.Equals("인쇄 기록")) 
             {
                 mainPanel.Controls.Clear();
+               /*
                 printrecode1.LoadData();
                 mainPanel.Controls.Add(printrecode1);
-                //mainPanel.Controls.Add(printrecode);
                 printrecode1.Dock = mainPanel.Dock;
+               */
+
+                printrecord.LoadData();
+                mainPanel.Controls.Add(printrecord);
+                printrecord.Dock = mainPanel.Dock;
             }
         }
 
@@ -106,13 +112,17 @@ namespace PSS
             userpanel.Dock = mainPanel.Dock;
 
         }
-        public void PrintrecordDataGet(string logf, string logl,
-        string name, string pagesize, string isColor)
+        public void PrintrecordDataGet(string logf, string logl, string name)
         {
             mainPanel.Controls.Clear();
+            /*
             printrecode1.FilterData(logf, logl, name, pagesize, isColor);
             mainPanel.Controls.Add(printrecode1);
             printrecode1.Dock = mainPanel.Dock;
+            */
+            printrecord.FilterData(logf, logl, name);
+            mainPanel.Controls.Add(printrecord);
+            printrecord.Dock = mainPanel.Dock;
         }
         private void btcsv_Click(object sender, EventArgs e)
         {
@@ -130,7 +140,8 @@ namespace PSS
                 SaveFileDialog save = GetCSVSave();
                 if (save.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    Save_CSV(save.FileName, printrecode1.getGrid(), true);
+                    //Save_CSV(save.FileName, printrecode1.getGrid(), true);
+                    Save_CSV(save.FileName, printrecord.getGrid(), true);
                 }
             }
         }
@@ -225,7 +236,13 @@ namespace PSS
             }
             else if (treeView.SelectedNode.Text.Equals("인쇄 기록"))
             {
-                
+                DataGridView grid = printrecord.getGrid();
+                printrecordProperty = new PropertyPage.PrintrecordPage();
+                printrecordProperty.SetContext(grid.CurrentRow.Cells[0].Value.ToString(),
+                grid.CurrentRow.Cells[1].Value.ToString(),
+                grid.CurrentRow.Cells[2].Value.ToString(),
+                grid.CurrentRow.Cells[3].Value.ToString());
+                printrecordProperty.Show();
             }
         }
 
@@ -247,9 +264,14 @@ namespace PSS
             else if (treeView.SelectedNode.Text.Equals("인쇄 기록"))
             {
                 mainPanel.Controls.Clear();
+                /*
                 printrecode1.LoadData();
                 mainPanel.Controls.Add(printrecode1);
                 printrecode1.Dock = mainPanel.Dock;
+                */
+                printrecord.LoadData();
+                mainPanel.Controls.Add(printrecord);
+                printrecord.Dock = mainPanel.Dock;
             }
         }
 
@@ -289,9 +311,9 @@ namespace PSS
             userpanel1.Dock = mainPanel.Dock;
             */
 
-            printrecode1.SearchNameData(name);
-            mainPanel.Controls.Add(printrecode1);
-            printrecode1.Dock = mainPanel.Dock;
+            printrecord.SearchNameData(name);
+            mainPanel.Controls.Add(printrecord);
+            printrecord.Dock = mainPanel.Dock;
         }
 
         private void 닫기ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -304,7 +326,7 @@ namespace PSS
             if (treeView.SelectedNode.Text.Equals("인쇄 기록"))
             {
                 string print_num = "";
-                DataGridView grid = printrecode1.getGrid();
+                DataGridView grid = printrecord.getGrid();
                 
                 //grid.ClearSelection();
                 grid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -318,7 +340,7 @@ namespace PSS
 
                 }
 
-                string file_path = printrecode1.GetFilepath(print_num);
+                string file_path = printrecord.GetFilepath(print_num);
 
                 System.Diagnostics.ProcessStartInfo pri = new System.Diagnostics.ProcessStartInfo();
 

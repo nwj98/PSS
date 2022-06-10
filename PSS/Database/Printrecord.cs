@@ -10,7 +10,7 @@ namespace PSS.Database
     {
         public int Print_num { get; set; }
         public string Emp_name { get; set; }
-        public string Page_size { get; set; }
+        public int File_size { get; set; }
         public DateTime Log { get; set; }
         public string File_path { get; set; }
     }

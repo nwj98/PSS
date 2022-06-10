@@ -33,9 +33,9 @@ namespace PSS.ucPanel
                 {
                     printrecord.Print_num,
                     printrecord.Emp_name,
-                    printrecord.Page_size,
+                    printrecord.File_size,
                     printrecord.Log
-                }) ;
+                });
             }
         }
         public void FilterData(string logf, string logl, string name, string pagesize, string isColor)
@@ -52,7 +52,7 @@ namespace PSS.ucPanel
                 {
                     printrecord.Print_num,
                     printrecord.Emp_name,
-                    printrecord.Page_size,
+                    printrecord.File_size,
                     printrecord.Log
                 });
             }

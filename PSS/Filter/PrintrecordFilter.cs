@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace PSS.Filter
 {
     public delegate void PrintrecordDataGetEventHandler(string logf, string logl,
-        string name, string pagesize, string isColor);
+        string name);
     public partial class PrintrecordFilter : Form
     {
         public PrintrecordDataGetEventHandler DataSendEvent;
@@ -22,7 +22,7 @@ namespace PSS.Filter
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DataSendEvent(tblogfirst.Text, tbloglast.Text, tbname.Text, tbpagesize.Text, tbcolor.Text);
+            DataSendEvent(tblogfirst.Text, tbloglast.Text, tbname.Text);
             this.Close();
         }
     }
