@@ -17,13 +17,6 @@ namespace PSS.PropertyPage
             InitializeComponent();
         }
 
-        public void SetLabelText(string num, string name, string size, string log)
-        {
-            lblnum.Text = num;
-            lblname.Text = name;
-            lblsize.Text = size;
-            lbllog.Text = log;
-        }
         public void SetContext(string num, string name, string size, string log)
         {
             lblnum.Text = num;

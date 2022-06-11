@@ -84,7 +84,7 @@ namespace PSS
             // 닫기ToolStripMenuItem
             // 
             this.닫기ToolStripMenuItem.Name = "닫기ToolStripMenuItem";
-            this.닫기ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.닫기ToolStripMenuItem.Size = new System.Drawing.Size(122, 26);
             this.닫기ToolStripMenuItem.Text = "닫기";
             this.닫기ToolStripMenuItem.Click += new System.EventHandler(this.닫기ToolStripMenuItem_Click);
             // 
@@ -322,7 +322,7 @@ namespace PSS
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainPage";
+            this.Text = "PSS";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainPage_FormClosing);
             this.Load += new System.EventHandler(this.MainPage_Load);
             this.menuStrip1.ResumeLayout(false);

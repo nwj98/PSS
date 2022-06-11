@@ -12,7 +12,7 @@ namespace PSS.PropertyPage
 {
     public partial class UserPropertyPage : Form
     {
-        UserProperty property = new UserProperty();
+        
         public UserPropertyPage()
         {
             InitializeComponent();
@@ -20,13 +20,7 @@ namespace PSS.PropertyPage
         }
 
         
-        public void SetPropertyLabel(string id, string docname, string name, string gender,
-            string rank, string ip,string log)
-        {
-            property.SetLabelText(id, docname, name, gender, rank, ip,log);
-            
-            
-        }
+        
         public void SetContext(string id, string docname, string name, string gender,
             string rank, string ip, string log)
         {
