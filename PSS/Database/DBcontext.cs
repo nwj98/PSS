@@ -18,8 +18,9 @@ namespace PSS.Database
         {
             if(connection == null)
             {
+                // Port=3306 or Port=3307
                 connection = new MySqlConnection
-                    ("Server=localhost;Port=3306;Database=c#_employees;Uid=root;Pwd=root;");
+                    ("Server=localhost;Port=3307;Database=c#_employees;Uid=root;Pwd=root;");
             }
             
     
